@@ -147,10 +147,15 @@
 -- FROM Departments
 -- JOIN Groups_ ON Groups_.department_id = Departments.department_id
 
-CREATE TABLE TeachersSubjects(
-	teachers_subject_id SERIAL PRIMARY KEY,
-	teacher_id INT,
-	subject_id INT,
-	FOREIGN KEY (teacher_id) REFERENCES Teachers(teacher_id),
-	FOREIGN KEY (subject_id) REFERENCES Subjects(subject_id)
-)
+-- CREATE TABLE TeachersSubjects(
+-- 	teachers_subject_id SERIAL PRIMARY KEY,
+-- 	teacher_id INT,
+-- 	subject_id INT,
+-- 	FOREIGN KEY (teacher_id) REFERENCES Teachers(teacher_id),
+-- 	FOREIGN KEY (subject_id) REFERENCES Subjects(subject_id)
+-- )
+
+SELECT Subjects.subject_name AS "Subjects"
+FROM Subjects
+JOIN TeachersSubjects ON TeachersSubjects.subject_id = Subjects.subject_id
+JOIN Teachers ON Teachers.teacher_id = TeachersSubjects.teacher_id AND Teachers.teacher_name = 'John' AND Teachers.teacher_surname = 'Doe'
