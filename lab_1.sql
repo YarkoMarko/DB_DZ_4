@@ -143,6 +143,14 @@
 -- JOIN Departments ON Departments.department_id = Groups_.department_id
 -- JOIN Faculties ON Faculties.faculty_id = Departments.faculty_id
 
-SELECT Departments.department_name AS "Departments", Groups_.group_name AS "Groups"
-FROM Departments
-JOIN Groups_ ON Groups_.department_id = Departments.department_id
+-- SELECT Departments.department_name AS "Departments", Groups_.group_name AS "Groups"
+-- FROM Departments
+-- JOIN Groups_ ON Groups_.department_id = Departments.department_id
+
+CREATE TABLE TeachersSubjects(
+	teachers_subject_id SERIAL PRIMARY KEY,
+	teacher_id INT,
+	subject_id INT,
+	FOREIGN KEY (teacher_id) REFERENCES Teachers(teacher_id),
+	FOREIGN KEY (subject_id) REFERENCES Subjects(subject_id)
+)
