@@ -123,5 +123,10 @@
 -- JOIN GroupsLectures ON GroupsLectures.lecture_id = Lectures.lecture_id
 -- JOIN Groups_ ON Groups_.group_id = GroupsLectures.group_id
 
-SELECT faculty_name AS "Faculties" FROM Faculties
-JOIN Departments ON Faculties.faculty_id = Departments.faculty_id AND Departments.financing >= Faculties.financing
+-- SELECT faculty_name AS "Faculties" FROM Faculties
+-- JOIN Departments ON Faculties.faculty_id = Departments.faculty_id AND Departments.financing >= Faculties.financing
+
+SELECT Curators.curator_surname AS "Curators", Groups_.group_name AS "Groups"
+FROM Curators
+JOIN GroupsCurators ON Curators.curator_id = GroupsCurators.curator_id
+JOIN Groups_ ON Groups_.group_id = GroupsCurators.group_id
