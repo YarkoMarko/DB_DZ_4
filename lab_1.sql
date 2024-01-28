@@ -117,8 +117,11 @@
 --     (2, 2),  
 --     (3, 3);
 
-SELECT Teachers.teacher_name || ' ' || Teachers.teacher_surname AS Professors, Groups_.group_name AS "Groups"
-FROM Teachers
-JOIN Lectures ON Teachers.teacher_id = Lectures.teacher_id
-JOIN GroupsLectures ON GroupsLectures.lecture_id = Lectures.lecture_id
-JOIN Groups_ ON Groups_.group_id = GroupsLectures.group_id
+-- SELECT Teachers.teacher_name || ' ' || Teachers.teacher_surname AS Professors, Groups_.group_name AS "Groups"
+-- FROM Teachers
+-- JOIN Lectures ON Teachers.teacher_id = Lectures.teacher_id
+-- JOIN GroupsLectures ON GroupsLectures.lecture_id = Lectures.lecture_id
+-- JOIN Groups_ ON Groups_.group_id = GroupsLectures.group_id
+
+SELECT faculty_name AS "Faculties" FROM Faculties
+JOIN Departments ON Faculties.faculty_id = Departments.faculty_id AND Departments.financing >= Faculties.financing
