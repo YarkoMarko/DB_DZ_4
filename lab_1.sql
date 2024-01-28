@@ -131,8 +131,14 @@
 -- JOIN GroupsCurators ON Curators.curator_id = GroupsCurators.curator_id
 -- JOIN Groups_ ON Groups_.group_id = GroupsCurators.group_id
 
-SELECT Teachers.teacher_surname AS "Teachers"
+-- SELECT Teachers.teacher_surname AS "Teachers"
+-- FROM Teachers
+-- JOIN Lectures ON Lectures.teacher_id = Teachers.teacher_id AND Lectures.lecture_name = 'Literature Appreciation'
+
+SELECT Teachers.teacher_surname AS "Teachers", Faculties.faculty_name AS "Faculties"
 FROM Teachers
-JOIN Lectures ON Lectures.teacher_id = Teachers.teacher_id AND Lectures.lecture_name = 'Literature Appreciation'
-
-
+JOIN Lectures ON Lectures.teacher_id = Teachers.teacher_id
+JOIN GroupsLectures ON GroupsLectures.lecture_id = Lectures.lecture_id
+JOIN Groups_ ON Groups_.group_id = GroupsLectures.group_id
+JOIN Departments ON Departments.department_id = Groups_.department_id
+JOIN Faculties ON Faculties.faculty_id = Departments.faculty_id
