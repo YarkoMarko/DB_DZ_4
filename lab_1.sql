@@ -155,7 +155,13 @@
 -- 	FOREIGN KEY (subject_id) REFERENCES Subjects(subject_id)
 -- )
 
-SELECT Subjects.subject_name AS "Subjects"
-FROM Subjects
-JOIN TeachersSubjects ON TeachersSubjects.subject_id = Subjects.subject_id
-JOIN Teachers ON Teachers.teacher_id = TeachersSubjects.teacher_id AND Teachers.teacher_name = 'John' AND Teachers.teacher_surname = 'Doe'
+-- SELECT Subjects.subject_name AS "Subjects"
+-- FROM Subjects
+-- JOIN TeachersSubjects ON TeachersSubjects.subject_id = Subjects.subject_id
+-- JOIN Teachers ON Teachers.teacher_id = TeachersSubjects.teacher_id AND Teachers.teacher_name = 'John' AND Teachers.teacher_surname = 'Doe'
+
+-- SELECT Departments.department_name AS "Departments"
+-- FROM Departments
+-- JOIN Groups_ ON Groups_.department_id = Departments.department_id
+-- JOIN GroupsLectures ON GroupsLectures.group_id = Groups_.group_id
+-- JOIN Lectures ON Lectures.lecture_id = GroupsLectures.lecture_id AND Lectures.lecture_name = 'Chemistry Fundamentals'
