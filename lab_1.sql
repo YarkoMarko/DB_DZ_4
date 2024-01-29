@@ -165,3 +165,8 @@
 -- JOIN Groups_ ON Groups_.department_id = Departments.department_id
 -- JOIN GroupsLectures ON GroupsLectures.group_id = Groups_.group_id
 -- JOIN Lectures ON Lectures.lecture_id = GroupsLectures.lecture_id AND Lectures.lecture_name = 'Chemistry Fundamentals'
+
+-- SELECT Groups_.group_name AS "Groups"
+-- FROM Groups_
+-- JOIN Departments ON Departments.department_id = Groups_.department_id
+-- JOIN Faculties ON Faculties.faculty_id = Departments.faculty_id AND Faculties.faculty_name = 'Arts'
